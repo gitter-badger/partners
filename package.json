@@ -17,6 +17,7 @@
     "babel-preset-react": "^6.3.13",
     "babel-preset-stage-0": "^6.3.13",
     "eslint": "^1.10.3",
+    "enzyme": "^1.5.0",
     "eslint-plugin-react": "^3.16.1",
     "expect": "^1.14.0",
     "mocha": "^2.4.5",
