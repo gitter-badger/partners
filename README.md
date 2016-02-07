@@ -8,6 +8,8 @@ A contact searcher app.
 npm install
 npm start
 open http://localhost:3000
+npm test                    # Run tests
+npm test:watch              # Run test and watch files for changes              
 ```
 
 ### Dependencies
