@@ -5,12 +5,10 @@ const Toolbar = function Toolbar(props) {
     const { onSearch, onEdit, onNew } = props;
 
     return (
-        <div className={style.toolbar}>
-            <div class="">
-                <button type="button" onClick={onSearch}>Search</button>
-                <button type="button" onClick={onEdit}>Edit</button>
-                <button type="button" onClick={onNew}>New</button>
-            </div>
+        <div className={style.toolbar}>            
+            <button type="button" onClick={onSearch}>Search</button>
+            <button type="button" onClick={onEdit}>Edit</button>
+            <button type="button" onClick={onNew}>New</button>
         </div>
     )
 }
