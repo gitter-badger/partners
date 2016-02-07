@@ -5,9 +5,10 @@ A contact searcher app.
 ### Usage
 
 ```
-npm install
-npm start
-open http://localhost:3000
+npm install                   # Install dependencies
+npm start                     # Start a live reloading server
+open http://localhost:3000    # Run application in a browser
+npm run lint                  # Lint source code
 ```
 
 ### Dependencies
