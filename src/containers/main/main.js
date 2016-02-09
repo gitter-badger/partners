@@ -1,9 +1,36 @@
 import  React, { Component } from 'react';
 import Toolbar from '../../components/toolbar/toolbar';
+import Contacts from '../../containers/contacts/contacts';
+
+const contacts = [
+   {
+      "name":{
+         "first":"manuela"
+      },
+      "picture":{
+         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/39.jpg"
+      }
+   },
+   {
+      "name":{
+         "first":"barbara"
+      },
+      "picture":{
+         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/74.jpg"
+      }
+   }
+]
 
 export default class Main extends Component {
     render() {
-        return <Toolbar onSearch={this.onSearch} onEdit={this.onEdit} onNew={this.onNew} />
+        return (
+            <div>
+                <Toolbar onSearch={this.onSearch}
+                         onEdit={this.onEdit}
+                         onNew={this.onNew} />
+                <Contacts contacts={contacts} />
+            </div>
+        )
     }
 
     onSearch() {
@@ -17,4 +44,5 @@ export default class Main extends Component {
     onNew() {
         console.log('new...');
     };
+
 }
