@@ -1,5 +1,5 @@
 import  React, { Component } from 'react';
-import Toolbar from '../../components/toolbar/toolbar';
+import Toolbar from '../../components/toolbar';
 
 export default class Main extends Component {
     render() {
