@@ -34,12 +34,14 @@ class Search extends React.Component {
     }
 
     render() {
+        let { className, disabled, wait, onBlur, onChange, onFocus } = this.props;
+
         const attrs = {
             className:  this.props.className,
             disabled:   this.props.disabled,
-            onBlur:     (this.onBlur)? this.onBlur.bind(this) : this.props.onBlur.bind(this),
-            onChange:   (this.props.onChange)? debounce(this.props.onChange.bind(this), this.props.wait) : null,
-            onFocus:    (this.onFocus)? this.onFocus.bind(this) : this.props.onFocus.bind(this)
+            onBlur:     onBlur || this.onBlur.bind(this),
+            onFocus:    onFocus || this.onFocus.bind(this),
+            onChange:   debounce(onChange, wait || 0)
         };
 
         return <input ref="input" {...attrs} />
