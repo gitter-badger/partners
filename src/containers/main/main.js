@@ -4,19 +4,19 @@ import Contacts from '../../containers/contacts/contacts';
 
 const contacts = [
    {
-      "name":{
-         "first":"manuela"
+      'name':{
+         'first':'manuela'
       },
-      "picture":{
-         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/39.jpg"
+      'picture':{
+         'thumbnail':'http://api.randomuser.me/portraits/thumb/women/39.jpg'
       }
    },
    {
-      "name":{
-         "first":"barbara"
+      'name':{
+         'first':'barbara'
       },
-      "picture":{
-         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/74.jpg"
+      'picture':{
+         'thumbnail':'http://api.randomuser.me/portraits/thumb/women/74.jpg'
       }
    }
 ]
@@ -29,12 +29,13 @@ export default class Main extends Component {
                          onEdit={this.onEdit}
                          onNew={this.onNew} />
                 <Contacts contacts={contacts} />
+                { this.props.children }
             </div>
         )
     }
 
-    onSearch() {
-        console.log('search...');
+    onSearch(text) {
+        console.log('search...' + text);
     };
 
     onEdit() {
