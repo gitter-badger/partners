@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import Main from './containers/main/main';
+import React from 'react';
+import { Router, hashHistory } from 'react-router';
+import ReactDOM from 'react-dom';
 
-export default class App extends Component {
-  render() {
-    return (
-      <Main />
-    );
-  }
-}
+import routes from './routes';
+
+ReactDOM.render(
+    <Router history={hashHistory}>{routes}</Router>,
+    document.getElementById('root')
+);

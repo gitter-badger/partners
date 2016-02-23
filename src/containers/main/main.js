@@ -29,12 +29,13 @@ export default class Main extends Component {
                          onEdit={this.onEdit}
                          onNew={this.onNew} />
                 <Contacts contacts={contacts} />
+                { this.props.children }
             </div>
         )
     }
 
-    onSearch() {
-        console.log('search...');
+    onSearch(text) {
+        console.log('search...' + text);
     };
 
     onEdit() {
