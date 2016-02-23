@@ -1,8 +1,8 @@
 import React from 'react';
-import Search from '../search';
+import Search from '../search/search';
 import style from './style.css';
 
-const Toolbar = function Toolbar(props) {
+const Toolbar = (props) => {
     const { onSearch, onEdit, onNew } = props;
 
     return (
