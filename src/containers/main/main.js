@@ -4,19 +4,19 @@ import Contacts from '../../components/contacts/contacts';
 
 const contacts = [
    {
-      "name":{
-         "first":"manuela"
+      name:{
+         first:'manuela'
       },
-      "picture":{
-         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/39.jpg"
+      picture:{
+         thumbnail:'http://api.randomuser.me/portraits/thumb/women/39.jpg'
       }
    },
    {
-      "name":{
-         "first":"barbara"
+      name:{
+         first:'barbara'
       },
-      "picture":{
-         "thumbnail":"http://api.randomuser.me/portraits/thumb/women/74.jpg"
+      picture:{
+         thumbnail:'http://api.randomuser.me/portraits/thumb/women/74.jpg'
       }
    }
 ]
