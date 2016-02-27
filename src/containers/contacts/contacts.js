@@ -7,9 +7,16 @@ const Contacts = (props) => {
         return (
             <Contact title={contact.name.first}
                      image={contact.picture.thumbnail}
+                     onSelect={onSelect(contact.id, props.onSelect)}
                      key={i} />
         )
     })
+
+    function onSelect(id, cb) {
+        return (event) => {
+            return cb && cb(id);
+        }
+    }
 
     return (
         <div className={style.contacts}>
