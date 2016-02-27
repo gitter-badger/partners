@@ -2,12 +2,12 @@ import React from 'react';
 import style from './style.css'
 
 const Contact = (props) => {
-    const { title, image } = props;
+    const { title, image, onSelect } = props;
 
     return (
-        <div className={style.contact}>
-            <span>{title}</span>
-            <image src={image} />
+        <div className={style.contact} onClick={onSelect}>
+            <div className={style.title}>{title}</div>
+            <div className={style.thumb}><img src={image} /></div>
         </div>
     )
 }
