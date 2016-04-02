@@ -2,8 +2,8 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
-    "test": "mocha ./test/**.js --compilers js:babel-core/register --require ignore-styles",
-    "test:watch": "mocha -w ./test/**.js --compilers js:babel-core/register --require ignore-styles"
+    "test": "mocha ./test/**/*.test.js --compilers js:babel-core/register --require ignore-styles",
+    "test:watch": "mocha -w ./test/**/*.test.js --compilers js:babel-core/register --require ignore-styles"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,9 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "debounce": "^1.0.0",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-router": "^2.0.0"
   }
 }

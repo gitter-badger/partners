@@ -1,45 +1,69 @@
 import  React, { Component } from 'react';
-import Toolbar from '../../components/toolbar/toolbar';
-import Contacts from '../../components/contacts/contacts';
+import { hashHistory } from 'react-router';
 
-const contacts = [
-   {
-      name:{
-         first:'manuela'
-      },
-      picture:{
-         thumbnail:'http://api.randomuser.me/portraits/thumb/women/39.jpg'
-      }
-   },
-   {
-      name:{
-         first:'barbara'
-      },
-      picture:{
-         thumbnail:'http://api.randomuser.me/portraits/thumb/women/74.jpg'
-      }
-   }
-]
+import Toolbar from '../../components/toolbar/toolbar';
+import Contacts from '../../containers/contacts/contacts';
+import contacsStore from '../../stores/contactsStore';
+
+import style from './style.css';
+
 
 export default class Main extends Component {
+    
+    constructor(props) {
+        super(props);
+        this.state = { contacts: [], selectedContactId: 0 };
+    }
+
+    componentDidMount() {
+        contacsStore.loadContacts().then((contacts) => {
+            if (contacts.length > 0) {
+                this.setState({ contacts: contacts , selectedContactId : contacts[0].id });
+                hashHistory.push('/contacts/' + contacts[0].id);
+            }
+        })
+    }
+
     render() {
+        const { contacts, currentContact } = this.state;
+
         return (
             <div>
-                <Toolbar onSearch={this.onSearch}
-                         onEdit={this.onEdit}
-                         onNew={this.onNew} />
-                <Contacts contacts={contacts} />
+                <div className={style.toolbar}>
+                    <Toolbar onSearch={this.onSearch}
+                             onEdit={this.onEdit}
+                             onNew={this.onNew}>
+                    </Toolbar>
+                </div>
+
+                <div className={style.mainPanel}>
+                    <div className="{style.navPanel}">
+                        <Contacts contacts={contacts} onSelect={this.onSelect.bind(this)}>
+                        </Contacts>
+                    </div>
+
+                    <div className={style.contentPanel}>
+                        { this.props.children }
+                    </div>
+                </div>
             </div>
         )
     }
 
-    onSearch() {
-        console.log('search...');
+    onSearch(text) {
+        console.log('search...' + text);
     };
 
     onEdit() {
         console.log('edit...');
     };
+
+    onSelect(contactId) {
+        this.setState({
+            selectedContactId : contactId
+        });
+        hashHistory.push('/contacts/' + contactId);
+    }
 
     onNew() {
         console.log('new...');

@@ -6,8 +6,8 @@ const Contact = (props) => {
 
     return (
         <div className={style.contact} onClick={onSelect}>
-            <span>{title}</span>
-            <image src={image} />
+            <div className={style.title}>{title}</div>
+            <div className={style.thumb}><img src={image} /></div>
         </div>
     )
 }
