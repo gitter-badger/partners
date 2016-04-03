@@ -1,0 +1,13 @@
+1. Install Dependencies
+npm install --save redux react-redux react-router-redux
+
+2. Create Presentational Components: Functional stateless components.
+
+3. Create Container Components: Container components with connect(mapStateToProps, mapDispatchToProps) function from the React Redux library.
+- mapStateToProps => How to transform store into props for presentational component.
+- mapDispatchToProps() => Receives the dispatch() and return callback props for presentational component.
+- connect() =>
+
+4. Create Store and Reducers
+
+5. Setup <Provider> in the Root component to spread the store to all container components.

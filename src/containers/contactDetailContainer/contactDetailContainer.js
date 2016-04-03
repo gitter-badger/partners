@@ -1,6 +1,6 @@
 import React from 'react';
 import contactsStore from '../../stores/contactsStore';
-import ContactDetail from '../../components/contactDetail/contactDetail';
+import { ContactDetail } from '../../components';
 
 class ContactDetailContainer extends React.Component {
 
